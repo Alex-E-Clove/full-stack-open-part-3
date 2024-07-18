@@ -9,3 +9,14 @@ content-type:  application/json
     "content": "sample", 
     "important" : false
 }
+
+
+###
+# No content
+POST http://localhost:3001/api/notes/ http/1.1
+content-type:  application/json
+
+{
+
+    "important" : false
+}
