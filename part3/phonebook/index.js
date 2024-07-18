@@ -1,12 +1,21 @@
 const express = require("express");
+const morgan = require("morgan");
 
 const app = express();
 
 app.use(express.json());
+morgan.token("dataSent", (request, _) => {
+  return JSON.stringify(request.body);
+});
+app.use(
+  morgan(
+    ":method :url :status :res[content-length] - :response-time ms :dataSent"
+  )
+);
 
 const generateId = () => {
   const randomDecimal = Math.random();
-  const randomNumber = Math.round(randomDecimal * 10 ** 10);
+  const randomNumber = Math.round(randomDecimal * 10 ** 12);
   const id = String(randomNumber);
   return id;
 };

@@ -21,7 +21,7 @@ DELETE http://localhost:3001/api/persons/1
 
 ####
 # Add person
-POST http://localhost:3001/api/persons http/1.1
+POST http://localhost:3001/api/persons
 content-type: application/json
 
 {
@@ -31,7 +31,7 @@ content-type: application/json
 
 ####
 # Add person with name that already exists
-POST http://localhost:3001/api/persons/ http/1.1
+POST http://localhost:3001/api/persons/
 Content-Type: application/json
 
 {
@@ -42,7 +42,7 @@ Content-Type: application/json
 
 ####
 # Number is missing
-POST http://localhost:3001/api/persons/ http/1.1
+POST http://localhost:3001/api/persons/
 Content-Type: application/json
 
 {
@@ -51,7 +51,7 @@ Content-Type: application/json
 
 ####
 # Name is missing
-POST http://localhost:3001/api/persons/ http/1.1
+POST http://localhost:3001/api/persons/
 Content-Type: application/json
 
 {
